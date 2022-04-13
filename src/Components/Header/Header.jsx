@@ -1,49 +1,45 @@
 import React from "react";
-import './Header.css';
-import {Link } from 'react-router-dom';
-import { ring1, ring2, ring3, ring4, ring5, ring7 } from "../../assets/images";
-
-
-
+import "./Header.css";
+import { Link } from "react-router-dom";
+import { useCart } from "../../context/cartContext/cartContext";
 
 const Header = () => {
+  const {cartData} = useCart();
   return (
     <>
       <div className="main-container">
         <header>
           <nav className="navigation-bar">
-            <a className="title" href="#">
+            <Link to="/Home" className="title">
               Grail Jewellary
-            </a>
+            </Link>
             <input className="search-bar" type="text" placeholder="search" />
             <ul className="side-nav-section">
               <li>
-                <button className="login-btn">
-                  <Link to="/loginsignup">Login</Link>
-                </button>
+                <Link to="/login">
+                  <button className="login-btn">login</button>
+                </Link>
               </li>
+
               <li>
-                <a className="wishlist-btn btn" href="cards.html">
+                <Link to="/WishList" className="wishlist-btn btn">
                   <i className="fa fa-heart-o"></i>
                   <span className="badge-wishlist">4</span>
-                </a>
+                </Link>
               </li>
+
               <li>
-                <a className="add-cart-btn btn" href="shoppingcard.html">
+                <Link to="/cart" className="add-cart-btn btn">
                   <i className="fa fa-shopping-cart"></i>
-                  <span className="badge-wishlist">2</span>
-                </a>
+                  <span className="badge-wishlist">{cartData.length}</span>
+                </Link>
               </li>
             </ul>
           </nav>
         </header>
       </div>
-    
-      
     </>
   );
 };
 
-
-
-export default Header;
+export {Header};

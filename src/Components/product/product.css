@@ -101,7 +101,7 @@ li {
     text-align: -webkit-match-parent;
 }
 
-button {
+.but_1 {
     cursor: pointer;
 }
 
@@ -213,6 +213,6 @@ button {
     border: 1px solid grey;
 }
 
-button {
+.but_1 {
     padding: 1rem;
 }

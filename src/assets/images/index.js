@@ -17,6 +17,6 @@ import card1 from './card1.jpg';
 import card2 from './card2.jpeg';
 import card3 from './card3.jpeg';
 
-
+// import { default as cart1 } from "./card1.jpg";
 
 export {ring1, ring2, ring3,ring4,ring5,ring6,ring7,pro1,pro2,pro3,pro4,pro5,pro6,hand,card1,card2,card3} 

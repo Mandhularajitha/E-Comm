@@ -12,45 +12,63 @@ export const products = [
   {
     _id: uuid(),
     img:pro4,
-    name:"julary5",
+    name:"Jewellary",
     price: "5000",
-    categoryName: "non-fiction",
-
+    rating: 4.5,
+    isaddToCart:"true",
+    iswishList:"false",
+    category:"Sliver"
+    
   },
   {
     _id: uuid(),
     img:pro2,
-    name:"julary1",
-    price: "5000",
-    categoryName: "non-fiction",
+    name:"Jewellary",
+    price: "2999",
+    rating:3,
+    isaddToCart:"true",
+    iswishList:"false",
+    category:"Cluster"
   },
   {
     _id: uuid(),
     img:pro3,
-    name:"julary2",
-    price: "5000",
-    categoryName: "non-fiction",
+    name:"Jewellary",
+    price: "5040",
+    rating:2,
+    isaddToCart:"true",
+    iswishList:"false",
+    category:"Glory Mesh"
   },
   {
     _id: uuid(),
     img:pro4,
-    name:"julary3",
-    price: "5000",
-    categoryName: "non-fiction",
+    name:"Jewellary",
+    price: "5999",
+    rating:3.5,
+    isaddToCart:"true",
+    iswishList:"false",
+    category:"Sliver"
   },
   {
     _id: uuid(),
     img:pro5,
-    name:"julary4",
-    price: "5000",
-    categoryName: "non-fiction",
+    name:"Jewellary",
+    price: "1990",
+    rating:4,
+    isaddToCart:"true",
+    iswishList:"false",
+    category:"Cluster"
   },
   {
     _id: uuid(),
-    img:pro5,
-    name:"julary4",
-    price: "5000",
-    categoryName: "non-fiction",
+    img:pro6,
+    name:"Jewellary",
+    price: "3099",
+    rating:2,
+    isaddToCart:"true",
+    iswishList:"false",
+    category:"Cluster"
   },
   
 ];

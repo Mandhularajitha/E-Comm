@@ -1,62 +1,64 @@
-import React from 'react';
-import './Login.css'
-import Header from '../Header/Header';
+
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../context/Authentication/LoginContext";
+// import "./Login.css"
+// import {Signup}  from './signup';
+// import {Header} from "../Header/Header";
 
 const Login = () => {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+const {loginHandler}=useAuth();
 
   return (
+  
+    <div className="login_handler">
+      <div className="seconddiv">
+        <center>
+          <div className="h1">
+            <Link to="login">
+              <h2 className="login_page">login page</h2>
+            </Link>
+          </div>
+          <form
 
-    <>
-     <div class="container">
-            <form class="form" id="login" >
-                <h1 class="form__title">Login</h1>
-                <div class="form__message form__message--error"></div>
-                <div class="form__input-group">
-                    <input type="text" class="form__input" autofocus placeholder="Username or email" />
-                    <div class="form__input-error-message"></div>
-                </div>
-                <div class="form__input-group">
-                    <input type="password" class="form__input" autofocus placeholder="Password" />
-                    <div class="form__input-error-message"></div>
-                </div>
-                <button class="form__button" type="submit">Continue</button>
-                <p class="form__text">
-                    <a href="#" class="form__link">Forgot your password?</a>
-                </p>
-                <p class="form__text">
-                    <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
-                </p>
-            </form>
+          >
+            <input className="user"
+              type="text"
+              name="username"
+              value={data.email}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
+              placeholder="username"
+            />
+            <br />
+            <input className="user"
+              type="password"
+              name="password"
+              value={data.password}
+              onChange={(e) => setData({ ...data, password: e.target.value })}
+              placeholder="password"
+            />
+            <br />
 
-            <form class="form form--hidden" id="createAccount">
-                <h1 class="form__title">Create Account</h1>
-                <div class="form__message form__message--error"></div>
-                <div class="form__input-group">
-                    <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username" />
-                    <div class="form__input-error-message"></div>
-                </div>
-                <div class="form__input-group">
-                    <input type="text" class="form__input" autofocus placeholder="Email Address" />
-                    <div class="form__input-error-message"></div>
-                </div>
-                <div class="form__input-group">
-                    <input type="password" class="form__input" autofocus placeholder="Password" />
-                    <div class="form__input-error-message"></div>
-                </div>
-                <div class="form__input-group">
-                    <input type="password" class="form__input" autofocus placeholder="Confirm password" />
-                    <div class="form__input-error-message"></div>
-                </div>
-                <button class="form__button" type="submit">Continue</button>
-                <p class="form__text">
-                    <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
-                </p>
-            </form>
-        </div>
-    
-    {/* <script src="loginsignup.js"></script> */}
-    </>
-  )
-}
+            <button  onClick={(e) => {
+              e.preventDefault();
+              loginHandler(data.email, data.password);
+            }}
+            type="submit">Login</button>
 
-export default Login
+          </form>
+
+          <p>
+            <a href="a">Forget password ?</a>or
+            <Link to="/Signup">Signup</Link>
+          </p>
+        </center>
+      </div>
+    </div>
+  );
+};
+
+export {Login};
