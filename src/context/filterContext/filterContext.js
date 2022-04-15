@@ -16,7 +16,7 @@ const initialState = {
 function FilterProvider({children}){
 
 
-const [state , dispatch] = useReducer(filterReducer , initialState);                             //we are calling the filterReducer in reducers   
+const [state , dispatch] = useReducer(filterReducer , initialState);                             
 
 const {products} = useProduct();
 

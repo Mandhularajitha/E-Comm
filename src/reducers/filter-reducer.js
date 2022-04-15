@@ -23,10 +23,6 @@ function filterReducer(state,action){
             ...state,
                 cart: [...state.cart, { ...action.payload }],
           
-            // cartItemsCount: state.cartItemsCount + 1,
-        //   totalCost: Number(state.totalCost) + Number(action.payload.price),
-        //   ItemsCost: Number(state.ItemsCost) + Number(action.payload.price),
-
         };
         
         default:

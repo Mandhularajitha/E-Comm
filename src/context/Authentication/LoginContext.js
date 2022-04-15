@@ -24,13 +24,11 @@ const AuthProvider = ({ children }) => {
       localStorage.setItem("AuthToken",response.data.encodedToken)
       setIsAuth(true) 
 
-      // console.log(response,"responce");
-      // console.log(response.data,"data");
-      // console.log(response.data.encodedToken,"encodedtoken");
+    
 
     } catch (error) {
       console.log(error);
-      // setIsErr(error)
+      
     }
   };
 
@@ -42,10 +40,10 @@ const AuthProvider = ({ children }) => {
             'email': email,
             'password': password
         });
-        console.log(response,"Book")
+      
 
     } catch (error) {
-        console.error(error,"Rajitha");
+       
     }
 };
 
