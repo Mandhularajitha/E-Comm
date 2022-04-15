@@ -10,9 +10,7 @@ makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-<<<<<<< Updated upstream
     <App />
-=======
     <BrowserRouter>
       <AuthProvider>
       <ProductProvider>
@@ -26,7 +24,6 @@ ReactDOM.render(
         </ProductProvider>
       </AuthProvider>
     </BrowserRouter>
->>>>>>> Stashed changes
   </React.StrictMode>,
   document.getElementById("root")
 );
