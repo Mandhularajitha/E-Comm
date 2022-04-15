@@ -1,73 +1,89 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../context/Authentication/LoginContext";
-
 import {Header} from "../Header/Header";
 // import "./Login.css"
+import { useAuth } from "../../context/Authentication/LoginContext";
 
-const Login = () => {
+const Signup = () => {
+  const { signupHandler } = useAuth();
 
-import {Signup}  from './signup';
-
-const Login = () => {
-  
   const [data, setData] = useState({
+    name: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
-const {loginHandler}=useAuth();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (data.password === data.confirmPassword) {
+      console.log(data);
+    } else {
+      console.log("passwords are not same ");
+    }
+  };
 
   return (
-
     <>
-      <Header />
-    
-    <div className="login_handler">
-      <div className="seconddiv">
-        <center>
-          <div className="h1">
-            <Link to="login">
-              <h2 className="login_page">login page</h2>
-            </Link>
-          </div>
-          <form
-
-          >
-            <input className="user"
-              type="text"
-              name="username"
-              value={data.email}
-              onChange={(e) => setData({ ...data, email: e.target.value })}
-              placeholder="username"
-            />
-            <br />
-            <input className="user"
-              type="password"
-              name="password"
-              value={data.password}
-              onChange={(e) => setData({ ...data, password: e.target.value })}
-              placeholder="password"
-            />
-            <br />
-
-            <button  onClick={(e) => {
+     <Header />
+    <div className="signup">
+      {console.log(data)}
+      <center>
+        <div className="signup page">
+          <Link to="/login">
+            <h2>signup</h2>
+          </Link>
+        </div>
+        <form onSubmit={submitHandler}>
+          <input
+            type="text"
+            name="name"
+            value={data.name}
+            onChange={(e) => setData({ ...data, name: e.target.value })}
+            placeholder="Enter UserName"
+          />{" "}
+          <br />
+          <input
+            type="email"
+            name="email"
+            value={data.email}
+            onChange={(e) => setData({ ...data, email: e.target.value })}
+            placeholder="Email or phone number"
+          />
+          <br />
+          <input
+            type="password"
+            name="password"
+            value={data.password}
+            onChange={(e) => setData({ ...data, password: e.target.value })}
+            placeholder="password"
+          />
+          <br />
+          <input
+            type="password"
+            name="confirmPassword"
+            value={data.confirmPassword}
+            onChange={(e) =>
+              setData({ ...data, confirmPassword: e.target.value })
+            }
+            placeholder="Confirm password"
+          />{" "}
+          <br />
+          <button
+            onClick={(e) => {
               e.preventDefault();
-              loginHandler(data.email, data.password);
+              signupHandler(data.name, data.email, data.password);
             }}
-            type="submit">Login</button>
-
-          </form>
-
-          <p>
-            <a href="a">Forget password ?</a>or
-            <Link to="/Signup">Signup</Link>
-          </p>
-        </center>
-      </div>
+            className="sub_button"
+          >
+            signup
+          </button>
+          <p><Link to="/login">login</Link></p>
+        </form>
+      </center>
     </div>
     </>
   );
 };
-
-export {Login};
+export {Signup};
