@@ -2,11 +2,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/Authentication/LoginContext";
+
+import {Header} from "../Header/Header";
 // import "./Login.css"
-// import {Signup}  from './signup';
-// import {Header} from "../Header/Header";
 
 const Login = () => {
+
+import {Signup}  from './signup';
+
+const Login = () => {
+  
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -14,7 +19,10 @@ const Login = () => {
 const {loginHandler}=useAuth();
 
   return (
-  
+
+    <>
+      <Header />
+    
     <div className="login_handler">
       <div className="seconddiv">
         <center>
@@ -58,6 +66,7 @@ const {loginHandler}=useAuth();
         </center>
       </div>
     </div>
+    </>
   );
 };
 

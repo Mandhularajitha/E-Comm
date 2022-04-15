@@ -6,14 +6,12 @@ import {useCart} from "../../context/cartContext/cartContext"
 import { useWishlist } from "../../context/wishlistContext/wishlistContext";
 
 
-
-
 export function Product() {
   const [price, setPrice] = useState();
   const { state, dispatch, finaldata,filterByPrice} = useFilter();
   const { sortByPrice,filterByCategory,filterByRatings} = state;
   const {addToCart}=useCart();
-  // const {addToWishlist} = useWishlist();
+  const {addToWishlist} = useWishlist();
   console.log(useWishlist)
 
   return (

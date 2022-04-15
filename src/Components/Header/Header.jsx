@@ -3,8 +3,16 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/cartContext/cartContext";
 
+import { useWishlist } from "../../context/wishlistContext/wishlistContext";
+// import { WishList } from "../WishList/WishList";
+
 const Header = () => {
   const {cartData} = useCart();
+  const {wishlistData} = useWishlist();
+
+const Header = () => {
+  const {cartData} = useCart();
+
   return (
     <>
       <div className="main-container">
@@ -24,6 +32,9 @@ const Header = () => {
               <li>
                 <Link to="/WishList" className="wishlist-btn btn">
                   <i className="fa fa-heart-o"></i>
+
+                  <span className="badge-wishlist">{wishlistData.length}</span>
+
                   <span className="badge-wishlist">4</span>
                 </Link>
               </li>

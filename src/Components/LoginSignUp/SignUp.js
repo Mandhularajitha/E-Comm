@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import {Header} from "../Header/Header";
+// import "./Login.css"
 import { useAuth } from "../../context/Authentication/LoginContext";
 
 const Signup = () => {
@@ -22,6 +24,8 @@ const Signup = () => {
   };
 
   return (
+    <>
+     <Header />
     <div className="signup">
       {console.log(data)}
       <center>
@@ -78,6 +82,7 @@ const Signup = () => {
         </form>
       </center>
     </div>
+    </>
   );
 };
 export {Signup};

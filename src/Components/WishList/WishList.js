@@ -2,13 +2,13 @@ import React from "react";
 import { useWishlist } from "../../context/wishlistContext/wishlistContext";
 import "./WishList.css"
 import { Header } from "../Header/Header";
+import { useCart } from "../../context/cartContext/cartContext";
+
 
 function WishList() {
 
-  const {wishlistData} = useWishlist();
-
-  console.log(wishlistData,"rajitha")
-
+  const {wishlistData,removeFromWishlist} = useWishlist();
+  const {addToCart} = useCart();
 
   return (
     
@@ -27,24 +27,14 @@ function WishList() {
               <h4>{rating}</h4>
               <button
                 className="remove-btn"
-                onClick={() =>
-                  dispatch({
-                    type: "REMOVE-FROM-CART",
-                    payload: { _id, price, rating, category, img, name },
-                  })
-                }
+                onClick={()=>removeFromWishlist(_id)}
               >
-                Remove Cart
+                Remove Wishlist
               </button>
 
               <button
                 className="add-btn"
-                onClick={() =>
-                  dispatch({
-                    type: "ADD_TO_WISHLIST",
-                    payload: { _id, price, rating, category, img, name },
-                  })
-                }
+                onClick={()=>addToCart(product)}
               >
                 Move to cart
               </button>

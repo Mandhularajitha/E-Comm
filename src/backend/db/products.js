@@ -11,7 +11,7 @@ import {ring1, ring2, ring3,ring4,ring5,ring6,ring7,pro1,pro2,pro3,pro4,pro5,pro
 export const products = [
   {
     _id: uuid(),
-    img:pro4,
+    img:pro1,
     name:"Jewellary",
     price: "5000",
     rating: 4.5,

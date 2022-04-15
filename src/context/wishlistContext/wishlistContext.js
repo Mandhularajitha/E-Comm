@@ -2,16 +2,20 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useAuth } from "../Authentication/LoginContext";
+import { useNavigate} from "react-router-dom";
 
 const wishlistContext = createContext(null);
 
 function WishlistProvider({ children }) {
-    const { isAuth , navigate } = useAuth() ;
+    const navigate =  useNavigate();
+    const { isAuth } = useAuth() ;
+
     let authtoken = localStorage.getItem('AuthToken')
 
     const [wishlistData, setWishlistData] = useState([])
-    console.log(wishlistData,"escffc")
+
     async function addToWishlist(product) {
+
         if(authtoken){
             try {
                 const res = await axios.post('/api/user/wishlist', { product }, {
@@ -29,21 +33,20 @@ function WishlistProvider({ children }) {
         }
     }
 
-
-    
-    // async function removeFromWishlist(product) {
-    //     try {
-    //         const res = await axios.delete(`/api/user/wishlist/${product._id}`, {
-    //             headers: {
-    //                 authorization: authtoken,
-    //             },
-    //         });
+    async function removeFromWishlist(product) {
+        
+        try {
+            const res = await axios.delete(`/api/user/wishlist/${product}`, {
+                headers: {
+                    authorization: authtoken,
+                },
+            });
            
-    //         setWishlistData(res.data.wishlist)
-    //     } catch (error) {
-    //         console.error(error)
-    //     }
-    // }
+            setWishlistData(res.data.wishlist)
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
     useEffect(() => {
         if(isAuth){
@@ -69,10 +72,9 @@ function WishlistProvider({ children }) {
     }, [isAuth]);
 
 
-
     return (
         <>
-            <wishlistContext.Provider value={{ wishlistData, addToWishlist , removeFromWishlist }} >
+            <wishlistContext.Provider value={{ wishlistData, addToWishlist,removeFromWishlist}} >
                 {children}
             </wishlistContext.Provider>
 
