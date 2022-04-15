@@ -33,8 +33,6 @@ function WishlistProvider({ children }) {
         }
     }
 
-
-    
     async function removeFromWishlist(product) {
         
         try {

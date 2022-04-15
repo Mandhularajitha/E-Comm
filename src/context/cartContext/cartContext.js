@@ -96,5 +96,3 @@ const reducedData = cartData.reduce(priceDetailsCalc ,{ totalPrice : 0 ,totalDis
 }
 
 export {CartProvider,useCart}
-
-
