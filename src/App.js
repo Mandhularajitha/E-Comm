@@ -14,6 +14,7 @@ function App() {
     <div className="App">
       
 <Routes>
+  <Route path="/Header" element={<Header/>}/> 
   <Route path="/" element={<Home/>}/>
   <Route path="/login" element={<Login/>}/>
   <Route path="/cart" element={<Cart/>}/>
@@ -21,10 +22,9 @@ function App() {
   <Route path="/Home" element={<Home/> }/>
   <Route path="/Product" element={<Product/>}/>
   <Route path='/Signup' element={<Signup />}/>
-  <Route path="/mockman" element={<Mockman />}></Route>
+  <Route path="/mockman" element={<Mockman />}/>
  </Routes>
       
-  
     </div>
   );
 }

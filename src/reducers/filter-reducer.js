@@ -17,13 +17,6 @@ function filterReducer(state,action){
             filterByCategory:[],
             filterByRatings:null,
             };
-         
-        case "ADD-TO-CART":
-            return {
-            ...state,
-                cart: [...state.cart, { ...action.payload }],
-          
-        };
         
         default:
             return {...state};    

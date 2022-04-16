@@ -71,13 +71,13 @@ const Cart = () => {
             <hr />
 
             <p>
-              <span>Total items</span>
+              <span>Total Price</span>
               <span>{totalPrice}</span>
             </p>
 
             <p>
               <span>Discount</span>
-              <span>₹ { totalPrice - totalDiscoutPrice }</span>
+              <span>₹ {totalPrice - totalDiscoutPrice}</span>
             </p>
             <p>
               <span>Delivary Charges</span>

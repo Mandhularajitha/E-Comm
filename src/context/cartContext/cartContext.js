@@ -81,13 +81,14 @@ async function getQuantity (id, type) {
 }
     
 const priceDetailsCalc = (obj , curritem) => ({ ...obj,
-
+    
     totalPrice: curritem.price*curritem.qty + obj.totalPrice ,
     totalDiscoutPrice : curritem.discountedPrice*curritem.qty + obj.totalDiscoutPrice ,
   })
 
-const reducedData = cartData.reduce(priceDetailsCalc ,{ totalPrice : 0 ,totalDiscoutPrice : 0 })
 
+const reducedData = cartData.reduce(priceDetailsCalc ,{ totalPrice : 0 ,totalDiscoutPrice : 0 })
+console.log(reducedData)
     return (
       <cartContext.Provider value={{cartData,addToCart,removeFromCart,reducedData,getQuantity}}>
           {children}

@@ -4,7 +4,6 @@ import "./WishList.css"
 import { Header } from "../Header/Header";
 import { useCart } from "../../context/cartContext/cartContext";
 
-
 function WishList() {
 
   const {wishlistData,removeFromWishlist} = useWishlist();
