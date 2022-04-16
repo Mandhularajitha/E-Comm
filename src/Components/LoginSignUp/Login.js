@@ -2,13 +2,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/Authentication/LoginContext";
-
+import {Signup}  from './signup';
 import {Header} from "../Header/Header";
 // import "./Login.css"
 
 const Login = () => {
 
-import {Signup}  from './signup';
 
 const Login = () => {
   
@@ -69,5 +68,6 @@ const {loginHandler}=useAuth();
     </>
   );
 };
+}
 
 export {Login};
