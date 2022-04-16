@@ -9,9 +9,6 @@ import { Route, Routes } from "react-router-dom";
 import {Signup} from "./Components/LoginSignUp/SignUp";
 import Mockman from "mockman-js";
 
-
-
-
 function App() {
   return (
     <div className="App">
@@ -27,8 +24,7 @@ function App() {
   <Route path="/mockman" element={<Mockman />}></Route>
  </Routes>
       
-    
-       
+  
     </div>
   );
 }
