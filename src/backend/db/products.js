@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 
-import {ring1, ring2, ring3,ring4,ring5,ring6,ring7,pro1,pro2,pro3,pro4,pro5,pro6,card1,card2,card3} from  "../../assets/images/index" 
+import {pro1,pro2,pro3,pro4,pro5,pro6} from  "../../assets/images/index" 
 
 
 /**
@@ -15,6 +15,7 @@ export const products = [
     name:"Jewellary",
     price: "5000",
     rating: 4.5,
+    discountedPrice:1999,
     isaddToCart:"true",
     iswishList:"false",
     category:"Sliver"
@@ -26,6 +27,7 @@ export const products = [
     name:"Jewellary",
     price: "2999",
     rating:3,
+    discountedPrice:1000,
     isaddToCart:"true",
     iswishList:"false",
     category:"Cluster"
@@ -36,6 +38,7 @@ export const products = [
     name:"Jewellary",
     price: "5040",
     rating:2,
+    discountedPrice:1978,
     isaddToCart:"true",
     iswishList:"false",
     category:"Glory Mesh"
@@ -46,6 +49,7 @@ export const products = [
     name:"Jewellary",
     price: "5999",
     rating:3.5,
+    discountedPrice:199,
     isaddToCart:"true",
     iswishList:"false",
     category:"Sliver"
@@ -56,6 +60,7 @@ export const products = [
     name:"Jewellary",
     price: "1990",
     rating:4,
+    discountedPrice:1000,
     isaddToCart:"true",
     iswishList:"false",
     category:"Cluster"
@@ -66,6 +71,7 @@ export const products = [
     name:"Jewellary",
     price: "3099",
     rating:2,
+    discountedPrice:2000,
     isaddToCart:"true",
     iswishList:"false",
     category:"Cluster"

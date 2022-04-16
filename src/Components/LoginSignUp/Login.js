@@ -1,14 +1,10 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../context/Authentication/LoginContext";
-import {Signup}  from './signup';
 import {Header} from "../Header/Header";
 // import "./Login.css"
-import { useAuth } from "../../context/Authentication/LoginContext";
 
 const Login = () => {
-
 
   const [data, setData] = useState({
     name: "",
@@ -81,7 +77,7 @@ const Login = () => {
           >
             signup
           </button>
-          <p><Link to="/login">login</Link></p>
+          <p><Link to="/Signup">SignUp</Link></p>
         </form>
       </center>
     </div>
