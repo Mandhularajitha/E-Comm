@@ -14,7 +14,6 @@ function WishlistProvider({ children }) {
 
     const [wishlistData, setWishlistData] = useState([])
 
-    console.log(wishlistData,"1212")
 
     async function addToWishlist (product) {
 
@@ -34,7 +33,7 @@ function WishlistProvider({ children }) {
             }
     
         } catch (error) {
-            console.error(error , "err in addToWishlist-context");
+            console.error(error , "err in the addToWishlist-context");
         }
     }
     const itemExistInWishlist  = (product)=>{

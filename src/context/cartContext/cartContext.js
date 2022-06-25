@@ -67,7 +67,7 @@ async function addToCart (product) {
         }
 
     } catch (error) {
-        console.error(error , "err in addToCart-context");
+        console.error(error , "err in the addToCart-context");
     }
 }
 const itemExistInCart = (product)=>{

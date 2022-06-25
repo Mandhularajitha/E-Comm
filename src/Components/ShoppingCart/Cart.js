@@ -41,8 +41,8 @@ const Cart = () => {
         console.log(res);
       },
       prefill: {
-        name: `Rajitha`,
-        email: 'Rajitha@gmail.com',
+        name: `Rajithamudhiraj`,
+        email: 'Rajithamudhiraj@mail.com',
         contact: '1234567890',
       },
       theme: {
