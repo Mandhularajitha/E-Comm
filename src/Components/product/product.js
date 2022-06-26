@@ -12,6 +12,8 @@ export function Product() {
   const { sortByPrice,filterByCategory,filterByRatings} = state;
   const {addToCart}=useCart();
   const {addToWishlist} = useWishlist();
+  const authtoken = localStorage.getItem("AuthToken")
+  
   console.log(useWishlist)
 
   return (
@@ -168,7 +170,7 @@ export function Product() {
                 <h4>{product.categoryName}</h4>
                 <h4>{product.rating}</h4>
 
-                <button  className="but_1" onClick={() => addToCart(product)}>
+                <button  className="but_1" onClick={() => authtoken?addToCart(product):navigate("/login")}>
                   AddToCart
                 </button>
 

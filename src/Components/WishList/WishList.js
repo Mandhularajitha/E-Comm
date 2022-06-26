@@ -9,12 +9,15 @@ function WishList() {
   const {wishlistData,removeFromWishlist} = useWishlist();
   const {addToCart} = useCart();
 
+
   return (
     
     <>
       <Header />
-      <div className="products_container">
-      {wishlistData.map((product) => {
+      <div className="products_containe_cart">
+
+      {wishlistData?.map((product) => {
+        console.log(wishlistData,"wishlistData")
         const { _id, img, name, price, rating } = product;
 
         return (

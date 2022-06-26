@@ -48,7 +48,7 @@ const Signup = () => {
             name="email"
             value={data.email}
             onChange={(e) => setData({ ...data, email: e.target.value })}
-            placeholder="Email or phone number"
+            placeholder="Email"
           />
           <br />
           <input

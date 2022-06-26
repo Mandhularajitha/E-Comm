@@ -9,11 +9,57 @@ const Cart = () => {
   const {totalDiscoutPrice , totalPrice}= reducedData;
   const {addToWishlist} = useWishlist();
 
+
+  const loadRazorPay = () => {
+    return new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+      document.body.appendChild(script);
+    });
+  };
+
+  const paymentHandler = async () => {
+    const response = await loadRazorPay();
+    if (!response) return console.error('Error in loading razorpay sdk');
+    var options = {
+      key_id: 'rzp_test_aezy2ZvOxAZcaK',
+      key: 'rzp_test_aezy2ZvOxAZcaK',
+      amount: (1200 * 100),
+      currency: 'INR',
+      name: 'My shop',
+      description: 'Buy new clothes!',
+      image:
+        'https://icon-library.com/images/image-icon-png/image-icon-png-6.jpg',
+      handler: function (res) {
+        console.log('Payment is success, do something!');
+        console.log(res);
+      },
+      prefill: {
+        name: `Rajithamudhiraj`,
+        email: 'Rajithamudhiraj@mail.com',
+        contact: '1234567890',
+      },
+      theme: {
+        color: '#0ea5e9',
+      },
+    };
+
+    var razorPay = new window.Razorpay(options);
+    razorPay.open();
+  };
+
+
   return (
     <>
       <Header />
       
-      <div className="products_container">
+      <div className="products_containe_cart">
       {cartData.map((product) => {
         const { _id, img, name, price, rating, discountedPrice,qty} = product;
 
@@ -90,7 +136,7 @@ const Cart = () => {
             </p>
             <hr />
             <p>You will save ₹ {totalPrice - totalDiscoutPrice }  on this order</p>
-            <a href="#">Proceed to Checkout</a>
+            <a href="#" onClick={paymentHandler}>Proceed to Checkout</a>
           </div>
         </div>
       </div>

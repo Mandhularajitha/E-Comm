@@ -3,7 +3,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/cartContext/cartContext";
 import { useWishlist } from "../../context/wishlistContext/wishlistContext";
-// import { WishList } from "../WishList/WishList";
+
 
 
 const Header = () => {

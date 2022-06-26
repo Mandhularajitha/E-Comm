@@ -15,16 +15,16 @@ const AuthProvider = ({ children }) => {
   const [isAuth,setIsAuth] =  useState(authInitialState);
   
   const loginHandler = async (email, password) => {
+    console.log(email,"email",password,"password");
     try {
       const response = await axios.post(`/api/auth/login`, {
-        email,
-        password,
+        'email':email,
+        'password':password,
         
       });
+      console.log(response,"responce");
       localStorage.setItem("AuthToken",response.data.encodedToken)
       setIsAuth(true) 
-
-    
 
     } catch (error) {
       console.log(error);

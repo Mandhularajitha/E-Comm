@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 import {Header} from './Header/Header';
 import {useNavigate} from "react-router-dom";
 
-
-
-
 function Home() {
 
     const navigate = useNavigate();
@@ -39,9 +36,6 @@ function Home() {
                     <img src={ring3} className="offer-im" onClick={()=>navigate("/product")}/>
                     <img src={ring4} className="offer-im" onClick={()=>navigate("/product")}/>
                     <img src={ring5} className="offer-im" onClick={()=>navigate("/product")}/>
-
-                
-
                 </div>
 
             </div>

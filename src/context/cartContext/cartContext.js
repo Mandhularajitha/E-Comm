@@ -41,17 +41,48 @@ console.log(cartData)
 
 
 async function addToCart (product) {
+
     try {
-        const res = await axios.post('/api/user/cart' , { product } , {
-            headers: {
-                authorization : authtoken
-            }})
-            setcartData(res.data.cart)
-            console.log(res.data.cart,"raji")
+        const itemInCart = itemExistInCart(product)
+
+        if (itemInCart){
+
+            const res = await axios.post(`/api/user/cart/${product._id}`, {
+                action: {
+                  type: "increment"
+                }
+              }, {
+                headers: {
+                    authorization : authtoken
+                }})
+                setcartData(res.data.cart)
+
+        }else{
+            const res = await axios.post('/api/user/cart' , { product } , {
+                headers: {
+                    authorization : authtoken
+                }})
+                setcartData(res.data.cart)
+
+        }
+
     } catch (error) {
-        console.error(error , "err in addToCart-context");
+        console.error(error , "err in the addToCart-context");
     }
 }
+const itemExistInCart = (product)=>{
+    let productItem = false
+    cartData.map((item)=>{
+        if (item._id === product._id){
+            return productItem = true
+        }
+        else{
+            return productItem
+        }
+    })
+    return productItem
+}
+
 
 async function removeFromCart (id) {
     try {

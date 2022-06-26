@@ -14,24 +14,41 @@ function WishlistProvider({ children }) {
 
     const [wishlistData, setWishlistData] = useState([])
 
-    async function addToWishlist(product) {
 
-        if(authtoken){
-            try {
+    async function addToWishlist (product) {
+
+        try {
+            const itemInWishlist  = itemExistInWishlist (product)
+    
+            if (itemInWishlist ){
+    
+    
+            }else{
                 const res = await axios.post('/api/user/wishlist', { product }, {
                     headers: {
-                        authorization: authtoken,
-                    },
-                });
-                setWishlistData(res.data.wishlist)
-            } catch (error) {
-                console.error(error)
-            } 
-        }
-        else {
-            navigate('/login')
+                        authorization : authtoken
+                    }})
+                    setWishlistData(res.data.wishlist)
+    
+            }
+    
+        } catch (error) {
+            console.error(error , "err in the addToWishlist-context");
         }
     }
+    const itemExistInWishlist  = (product)=>{
+        let productItem = false
+        wishlistData?.map((item)=>{
+            if (item._id === product._id){
+                return productItem = true
+            }
+            else{
+                return productItem
+            }
+        })
+        return productItem
+    }
+    
 
     async function removeFromWishlist(product) {
         

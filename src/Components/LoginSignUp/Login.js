@@ -28,10 +28,10 @@ const {loginHandler}=useAuth();
           >
             <input className="user"
               type="text"
-              name="username"
+              name="email"
               value={data.email}
               onChange={(e) => setData({ ...data, email: e.target.value })}
-              placeholder="username"
+              placeholder="email"
             />
             <br />
             <input className="user"
