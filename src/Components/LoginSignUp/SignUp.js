@@ -29,13 +29,11 @@ const Signup = () => {
     <div className="signup">
       {console.log(data)}
       <center>
-        <div className="signup page">
-          <Link to="/login">
-            <h2>signup</h2>
-          </Link>
-        </div>
+       
+        <div className="framhandler">
+        <h2 className="signup">signup</h2>
         <form onSubmit={submitHandler}>
-          <input
+          <input className="userinput"
             type="text"
             name="name"
             value={data.name}
@@ -43,7 +41,7 @@ const Signup = () => {
             placeholder="Enter UserName"
           />{" "}
           <br />
-          <input
+          <input className="userinput"
             type="email"
             name="email"
             value={data.email}
@@ -51,7 +49,7 @@ const Signup = () => {
             placeholder="Email"
           />
           <br />
-          <input
+          <input className="userinput"
             type="password"
             name="password"
             value={data.password}
@@ -59,7 +57,7 @@ const Signup = () => {
             placeholder="password"
           />
           <br />
-          <input
+          <input className="userinput"
             type="password"
             name="confirmPassword"
             value={data.confirmPassword}
@@ -69,7 +67,7 @@ const Signup = () => {
             placeholder="Confirm password"
           />{" "}
           <br />
-          <button
+          <button 
             onClick={(e) => {
               e.preventDefault();
               signupHandler(data.name, data.email, data.password);
@@ -80,6 +78,7 @@ const Signup = () => {
           </button>
           <p><Link to="/login">login</Link></p>
         </form>
+        </div>
       </center>
     </div>
     </>
