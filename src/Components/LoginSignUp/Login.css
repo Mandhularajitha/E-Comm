@@ -1,34 +1,50 @@
 
 .login_handler{
-    background-color: aliceblue;
-    margin: 10px;
-    margin-bottom: 10;
-    padding: 10px;
-    justify-content: center;
-    display: flex;
-    text-align: center;
-  }
- .user{
-    padding:10px;
-    border-radius: 10px;
-    margin: 5px;
-  }
-  
-  .login_page{
-    margin: -20px;
-  }
-  .profile{
-     width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-  }
-  .seconddiv{
-    display:flex;
-    justify-content: center;
-    height: 300px;
-    width: 450px;
-    background-color:rgb(163, 161, 187);
-    border-radius: 20px;
-    box-shadow:0 0 10px black;
-  }
-  
+
+    padding: 3rem;
+    border:40px solid #A5B4FC;
+    margin-top: 5rem;
+    margin-left: 28rem;
+    display: inline-block;
+    border-radius: 5px;
+    background-color:#A5B4FC;
+    padding: 19px;  
+}
+
+.user{
+  width: 15rem;
+  height: 2.3rem;
+}
+
+.login_page{
+  padding: 1rem;
+  margin-top: -3rem;
+}
+
+.submit_bt{
+    width: 5rem;
+    margin-top: 1rem;
+    height: 1.5rem;
+
+}
+
+.signup .framhandler {
+  padding: 10px;
+  border:2 px solid #A5B4FC;
+  margin-top: 4rem;
+  margin-left: 2rem;
+  display: inline-block;
+  border-radius: 5px;
+  background-color:#A5B4FC;
+  padding: 20px; 
+}
+
+.userinput{
+  width: 20rem;
+  height: 3rem;
+}
+.sub_button{
+  width: 9rem;
+  height: 2.5rem;
+}
+

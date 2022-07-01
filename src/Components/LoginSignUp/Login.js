@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/Authentication/LoginContext";
 import {Header} from "../Header/Header";
-// import "./Login.css"
+import "./Login.css"
 
 const Login = () => {
    
@@ -18,10 +18,10 @@ const {loginHandler}=useAuth();
     <div className="login_handler">
       <div className="seconddiv">
         <center>
-          <div className="h1">
-            <Link to="login">
+          <div className="h1_tag">
+           
               <h2 className="login_page">login page</h2>
-            </Link>
+            
           </div>
           <form
 
@@ -47,7 +47,7 @@ const {loginHandler}=useAuth();
               e.preventDefault();
               loginHandler(data.email, data.password);
             }}
-            type="submit">Login</button>
+            type="submit_bt" className="submit_bt">Login</button>
 
           </form>
 
