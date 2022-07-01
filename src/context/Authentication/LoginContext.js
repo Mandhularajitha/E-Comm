@@ -4,7 +4,6 @@ import { useState } from "react";
 import { createContext } from "react";
 import { useContext} from "react";
 
-
 const AuthContext = createContext();
 const useAuth = () => useContext(AuthContext);
 
@@ -18,8 +17,8 @@ const AuthProvider = ({ children }) => {
     console.log(email,"email",password,"password");
     try {
       const response = await axios.post(`/api/auth/login`, {
-        'email':email,
-        'password':password,
+        email:email,
+        password:password,
         
       });
       console.log(response,"responce");
@@ -32,20 +31,21 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-  const signupHandler = async ({firstName,email,password}) => {
+  const signupHandler = async (firstName,email,password) => {
     try {
         const response = await axios.post(`/api/auth/signup`, {
-        
-            'firstName': firstName,
-            'email': email,
-            'password': password
+            firstName: firstName,
+            email: email,
+            password: password,
         });
-      
+        console.log(email,password,"signhandler");
+      console.log(response,"333")
 
     } catch (error) {
        
     }
 };
+
 
   return (
     <AuthContext.Provider value={{loginHandler,signupHandler,isAuth,setIsAuth}}>

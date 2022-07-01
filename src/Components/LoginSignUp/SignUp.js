@@ -17,7 +17,8 @@ const Signup = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (data.password === data.confirmPassword) {
-      console.log(data);
+      console.log(data,"2");
+      signupHandler(data.name, data.email, data.password,data.confirmPassword);
     } else {
       console.log("passwords are not same ");
     }
@@ -68,9 +69,10 @@ const Signup = () => {
           />{" "}
           <br />
           <button 
+          type="submit"
             onClick={(e) => {
               e.preventDefault();
-              signupHandler(data.name, data.email, data.password);
+              signupHandler(data.name, data.email, data.password,data.confirmPassword);
             }}
             className="sub_button"
           >
