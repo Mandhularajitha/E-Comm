@@ -8,6 +8,7 @@ const useAddress = () => useContext(addressContext);
 function AddressProvider({ children }) {
 
     const authtoken = localStorage.getItem("AuthToken");
+    
     const [addresses, setAddresses] = useState([])
     const { isAuth } = useAuth()
 
