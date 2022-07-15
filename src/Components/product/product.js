@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 import { Header } from "../Header/Header";
 import "./product.css";
+import { useAuth } from "../../context/Authentication/LoginContext";
 import { useFilter } from "../../context/filterContext/filterContext";
 import {useCart} from "../../context/cartContext/cartContext"
 import { useWishlist } from "../../context/wishlistContext/wishlistContext";
+import { useNavigate } from "react-router-dom";
 
 
 export function Product() {
   const [price, setPrice] = useState();
+  const { isAuth } = useAuth();
   const { state, dispatch, finaldata,filterByPrice} = useFilter();
   const { sortByPrice,filterByCategory,filterByRatings} = state;
   const {addToCart}=useCart();
   const {addToWishlist} = useWishlist();
-  const authtoken = localStorage.getItem("AuthToken")
+  
+  // const authtoken = localStorage.getItem("AuthToken");
+  
+  const navigate={useNavigate }
+
+  console.log(isAuth,"Auth")
   
   console.log(useWishlist)
 
@@ -170,9 +178,11 @@ export function Product() {
                 <h4>{product.categoryName}</h4>
                 <h4>{product.rating}</h4>
 
-                <button  className="but_1" onClick={() => authtoken?addToCart(product):navigate("/login")}>
+                <button  className="but_1" onClick={() => isAuth?addToCart(product):navigate("/login")}>
+                  
                   AddToCart
                 </button>
+              
 
                 <button  className="but_1" onClick={() => addToWishlist(product)}>
                   Add to Wishlist

@@ -2,13 +2,13 @@
 .login_handler{
 
     padding: 3rem;
-    border:40px solid #A5B4FC;
+    border:4px solid #A5B4FC;
     margin-top: 5rem;
-    margin-left: 28rem;
+    margin-left: 35rem;
     display: inline-block;
     border-radius: 5px;
-    background-color:#A5B4FC;
-    padding: 19px;  
+    background-color:#e4e6ee;
+    padding: 4rem;  
 }
 
 .user{
@@ -22,20 +22,20 @@
 }
 
 .submit_bt{
-    width: 5rem;
+    width: 9rem;
     margin-top: 1rem;
-    height: 1.5rem;
+    height: 2rem;
 
 }
 
 .signup .framhandler {
   padding: 10px;
-  border:2 px solid #A5B4FC;
+  border:4px solid #A5B4FC;
   margin-top: 4rem;
   margin-left: 2rem;
   display: inline-block;
   border-radius: 5px;
-  background-color:#A5B4FC;
+  background-color:#e4e6ee;
   padding: 20px; 
 }
 
@@ -48,3 +48,7 @@
   height: 2.5rem;
 }
 
+.redirectlogin{
+  width: 9rem;
+  height: 2.5rem;
+}

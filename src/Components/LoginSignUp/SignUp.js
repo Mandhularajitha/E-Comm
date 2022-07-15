@@ -78,7 +78,8 @@ const Signup = () => {
           >
             signup
           </button>
-          <p><Link to="/login">login</Link></p>
+         
+          <button className="redirectlogin"><Link to="/login">Login Button</Link></button>
         </form>
         </div>
       </center>
