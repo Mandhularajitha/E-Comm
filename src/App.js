@@ -8,17 +8,17 @@ import { Cart } from "./Components";
 import { Route, Routes } from "react-router-dom";
 import {Signup} from "./Components/LoginSignUp/SignUp";
 import Mockman from "mockman-js";
-// import {RequiresAuth} from "./RequireAuth"
+
 
 function App() {
+
   return (
     <div className="App">
-      
+
 <Routes>
   <Route path="/Header" element={<Header/>}/> 
   <Route path="/" element={<Home/>}/>
   <Route path="/login" element={<Login/>}/>
-  {/* <Route path="/cart" element={<RequiresAuth><Cart/></RequiresAuth>}/> */}
   <Route path="/cart" element={<Cart/>}/>
   <Route path="/WishList" element={<WishList/>}/>
   <Route path="/Home" element={<Home/> }/>

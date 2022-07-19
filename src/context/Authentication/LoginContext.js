@@ -50,7 +50,7 @@ const AuthProvider = ({ children }) => {
             password: password,
         });
         console.log(email,password,"signhandler");
-      console.log(response,"333")
+     
 
     } catch (error) {
        
