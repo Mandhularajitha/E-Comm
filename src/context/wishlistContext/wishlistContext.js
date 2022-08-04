@@ -3,6 +3,7 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useAuth } from "../Authentication/LoginContext";
 import { useNavigate} from "react-router-dom";
+import { toast } from "react-toastify";
 
 const wishlistContext = createContext(null);
 
@@ -29,6 +30,7 @@ function WishlistProvider({ children }) {
                         authorization : authtoken
                     }})
                     setWishlistData(res.data.wishlist)
+                    toast.success("Item successfully added to your Wishlist");
     
             }
     

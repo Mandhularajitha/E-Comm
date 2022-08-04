@@ -3,6 +3,7 @@ import axios from 'axios';
 import React from 'react'
 import {useState} from 'react'
 import { createContext,useContext,useEffect } from "react";
+import { toast } from "react-toastify";
 import { useAuth } from '../Authentication/LoginContext';
 
 const cartContext = createContext(null);
@@ -56,6 +57,7 @@ async function addToCart (product) {
                     authorization : authtoken
                 }})
                 setcartData(res.data.cart)
+               
 
         }else{
             const res = await axios.post('/api/user/cart' , { product } , {
@@ -63,13 +65,14 @@ async function addToCart (product) {
                     authorization : authtoken
                 }})
                 setcartData(res.data.cart)
-
+                toast.success("Item successfully added to your cart");
         }
 
     } catch (error) {
         console.error(error , "err in the addToCart-context");
     }
 }
+
 const itemExistInCart = (product)=>{
     let productItem = false
     cartData.map((item)=>{

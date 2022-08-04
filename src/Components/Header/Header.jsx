@@ -3,10 +3,12 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/cartContext/cartContext";
 import { useWishlist } from "../../context/wishlistContext/wishlistContext";
-
+import { useAuth } from "../../context/Authentication/LoginContext";
 
 
 const Header = () => {
+  const {logoutHandler,isAuth}=useAuth();
+  
   const {cartData} = useCart();
   const {wishlistData} = useWishlist();
   return (
@@ -14,15 +16,21 @@ const Header = () => {
       <div className="main-container">
         <header>
           <nav className="navigation-bar">
-            <Link to="/Home" className="title">
+            <Link to="/" className="title">
               Grail Jewellary
             </Link>
             <input className="search-bar" type="text" placeholder="search" />
             <ul className="side-nav-section">
               <li>
+
+                {isAuth ?
+                <button className="login-btn" onClick={logoutHandler} >logout</button>
+                :
                 <Link to="/login">
-                  <button className="login-btn">login</button>
-                </Link>
+                <button className="login-btn">login</button>
+              </Link>
+                }
+             
               </li>
 
               <li>

@@ -100,7 +100,7 @@ const Cart = () => {
                 className="add-btn"
                onClick={()=>addToWishlist(product)}
               >
-                Move to Wishlist
+                add to Wishlist
               </button>
             </div>
           </>
