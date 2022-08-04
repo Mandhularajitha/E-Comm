@@ -38,7 +38,7 @@ function WishList() {
                 className="add-btn"
                 onClick={()=>addToCart(product)}
               >
-                Move to cart
+                add to cart
               </button>
             </div>
           </>

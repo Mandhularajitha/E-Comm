@@ -9,12 +9,14 @@ import { useNavigate } from "react-router-dom";
 
 export function Product() {
   const [price, setPrice] = useState();
+  const { cartData } = useCart();
   const { isAuth } = useAuth();
   const { state, dispatch, finaldata, filterByPrice } = useFilter();
   const { sortByPrice, filterByCategory, filterByRatings } = state;
   const { addToCart } = useCart();
   const { addToWishlist } = useWishlist();
   
+console.log(cartData,"cartData")
 
   const navigate = useNavigate();
   console.log(isAuth, "Auth");
@@ -22,7 +24,7 @@ export function Product() {
   const handleAddtoCart = (product) => {
     isAuth ? addToCart(product) : navigate("/login");
   };
-
+console.log(filterByRatings === "GREATER_THAN_ONE","filterByRatings ");
   return (
     <>
       <Header />
@@ -138,9 +140,11 @@ export function Product() {
               name="star-rating"
               value="rating"
               ckecked={filterByRatings === "GREATER_THAN_TWO"}
+              
               onChange={() =>
                 dispatch({ type: "RATING_FILTER", payload: "GREATER_THAN_TWO" })
               }
+             
             />
             <label htmlFor="text">2 Stars & Above</label>
             <br />
@@ -197,12 +201,26 @@ export function Product() {
                 <h4>{product.categoryName}</h4>
                 <h4>{product.rating}</h4>
 
-                <button
-                  className="but_1"
-                  onClick={() => handleAddtoCart(product)}
-                >
-                  AddToCart
-                </button>
+                {cartData.some(e => e._id===product._id )?
+
+                   (<button
+                   className="but_1"
+                   onClick={() => handleAddtoCart(product)}
+                 
+                 >
+                   goToCart
+                 </button>)
+
+                    :
+
+                    (<button
+                    className="but_1"
+                    onClick={() => handleAddtoCart(product)}
+                  
+                  >
+                    AddToCart
+                  </button>)
+                     }
 
                 <button
                   className="but_1"
